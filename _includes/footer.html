@@ -6,12 +6,7 @@
 
     <div class="footer-col-1 column">
       <ul>
-      </ul>
-    </div>
-
-    <div class="footer-col-2 column">
-      <ul>
-        {% if site.github_username %}<li>
+      {% if site.github_username %}<li>
           <a href="https://github.com/{{ site.github_username }}">
             <span class="icon github">
               <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -47,6 +42,11 @@
             <span class="username">{{ site.twitter_username }}</span>
           </a>
         </li>{% endif %}
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
       </ul>
     </div>
 
