@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: Gaming & Geekery
+permalink: /gaming/
 ---
 
-This is a page for projects.
+This is a page for stuff.

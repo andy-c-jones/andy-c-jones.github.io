@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Blog
-permalink: /blog/
+title: Technology & Current Affairs
+permalink: /tech/
 ---
 
 <div class="home">
