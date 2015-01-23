@@ -3,9 +3,7 @@
 
 * {
   margin: 0;
-  padding-top: 10px;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 0;
 }
 
 html, body { height: 100%; }
@@ -31,7 +29,7 @@ a:visited { color: #2a7ae2; }
 .wrap:after { clear: both; }
 .wrap {
   max-width: 100%;
-  padding: 0 30px;
+  padding: 0 0px;
   margin: 0 auto;
   zoom: 1;
 }
@@ -45,6 +43,7 @@ a:visited { color: #2a7ae2; }
 .site-header {
   min-height: 56px;
   background-color: white;
+  padding: 40px;
 }
 
 .site-title,
