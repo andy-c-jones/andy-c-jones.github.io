@@ -14,9 +14,13 @@ body {
   line-height: 1.5;
   font-weight: 300;
   background-color: #fdfdfd;
+  padding: 2% 0;
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { 
+  font-size: 24px; 
+  font-weight: 500;
+}
 
 a         { color: #2a7ae2; text-decoration: none; }
 a:hover   { color: #205caa;}
@@ -29,9 +33,27 @@ a:visited { color: #2a7ae2; }
 .wrap:after { clear: both; }
 .wrap {
   max-width: 100%;
-  padding: 0 0px;
+  padding: 0 10px;
   margin: 0 auto;
   zoom: 1;
+}
+
+/* Index */
+/* ----------------------------------------------------------*/
+
+.main-image {
+  float: left;
+  width: 300px;
+  padding-right: 20px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+}
+
+.right {
+  float: right;
+  width: 300px;
+  padding-right: 30px;
+  padding-left: 20px;
 }
 
 
