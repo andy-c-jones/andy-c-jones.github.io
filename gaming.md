@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Blog
-permalink: /blog/
+title: Gaming & Geekery
+permalink: /gaming/
 ---
 
 <div class="home">
   <ul class="posts">
-    {% for post in site.posts %}
+    {% for post in site.categories.gaming %}
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

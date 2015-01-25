@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome!"
+title:  "blog!"
 date:   2014-07-09 13:11:51
-categories: tech
+categories: blog
 ---
 
 Hi A
