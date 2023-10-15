@@ -206,8 +206,8 @@ theme = 'LoveIt'
   # Social config in home page
   # 主页的社交信息设置
   [params.social]
-    GitHub = "https://github.com/andy-c-jones"
-    Linkedin = "https://www.Linkedin.com/in/andycjones"
+    GitHub = "andy-c-jones"
+    Linkedin = "andycjones"
     Twitter = ""
     Instagram = ""
     Facebook = ""
