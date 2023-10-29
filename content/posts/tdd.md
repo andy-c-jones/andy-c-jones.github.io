@@ -63,6 +63,6 @@ Engineers will have totally valid ways of working that don’t involve TDD. Whil
 TDD is not writing many tests up front, and implementing them all in one go, or even in batches - it is an iterative process. If we start with writing a whole suite of tests, before starting to implement any functionality, we risk losing the benefits that TDD can bring, such as the flexibility to adapt to changing requirements, or if assumptions that were made upfront turn out to be wrong. Iterating through each requirement in the red-green-refactor cycle outlined above enables you to be more adaptive to change, or break down stories further if you realise that the scope is too large for a single story.
 
 
-<br>
+#### More TDD resources...
 
-If you are interested in learning more about TDD I recommend watching some videos from [Dave Farley on his YouTube channel "Continuous Delivery".](https://www.youtube.com/watch?v=llaUBH5oayw&list=PLwLLcwQlnXByqD3a13UPeT4SMhc3rdZ8q)
+If you are interested in learning more about TDD, I recommend watching some videos from [Dave Farley on his YouTube channel "Continuous Delivery".](https://www.youtube.com/watch?v=llaUBH5oayw&list=PLwLLcwQlnXByqD3a13UPeT4SMhc3rdZ8q)
