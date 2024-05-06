@@ -20,7 +20,7 @@ email = "aj@darkpeak.dev"
   [[menu.main]]
     weight = 1
     identifier = "reading list"
-    name = "Reading List"
+    name = "Software Engineering Reading List"
     url = "/reading-list/"
   [[menu.main]]
     weight = 2
