@@ -4,3 +4,11 @@
 My personal site and blog which can be found at [darkpeak.dev](https://darkpeak.dev).
 
 Currently using [Hugo](https://gohugo.io/) and [dillonzq's LoveIt theme](https://github.com/dillonzq/LoveIt)
+
+## Running locally
+```
+git submodule init
+git submodule update
+
+hugo server
+```
