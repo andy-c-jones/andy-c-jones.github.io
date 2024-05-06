@@ -1,5 +1,5 @@
 ---
-title: "Reading List"
+title: "Software Engineering Reading List"
 draft: false
 author: "Andrew 'AJ' Jones"
 ---
@@ -14,12 +14,6 @@ These books are recommended as must reads for developers of all experience level
 This is at the top of the reading list because it is by far the best bang for buck. In just 200 pages of large font Kent Beck and Cynthia Andres distil the practice of being a professional developer who has to deal with real world constraints. This book covers humanity, respect, feedback, working as a team, pairing, continuous integration, planning, quality, testing, and so much more.
 
 [This book on GoodReads](https://www.goodreads.com/book/show/67833.Extreme_Programming_Explained)
-
-
-#### Test Driven Development by Example - Kent Beck
-"By Example" is the key here, rather than just describing theory and expecting you to learn TDD, in this book, Kent Beck provides practical examples which start very simple so that he can show TDD best practice and why it is such a core programming skill. Note that the examples are all in Java but they are easy to follow regardless of what language you might be familiar with.
-
-[This book on GoodReads](https://www.goodreads.com/book/show/387190.Test_Driven_Development)
 
 #### Modern Software Engineering - Dave Farley
 Dave’s modern software engineering builds on the principles and practices from Extreme Programming (XP). It uses what we have learnt in the industry since the 90s to fill in more detail and gives actionable techniques for applying the principles of XP. It begins by exploring the difference between a craftsperson and an engineer, covers all the foundational principles like the importance of measurements to working iteratively and getting feedback before moving on the management of complexity. The management of complexity is used as the context for why Modularity, Cohesion, Separation of Concerns (Dependency Injection, Domain Driven Design and architectural concepts like ports and adapters) and Coupling are discussed.
