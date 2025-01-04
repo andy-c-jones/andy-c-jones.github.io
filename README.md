@@ -1,5 +1,5 @@
 # Dark Peak Development
-My personal site and blog which can be found at darkpeak.dev.
+My personal site and blog which can be found at [darkpeak.dev](https://darkpeak.dev).
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build) 
 
