@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import MarkdownWorksLayout from "../../layouts/MarkdownWorksLayout.astro";
+import MarkdownWorksLayout from "../../layouts/MarkdownBooksLayout.astro";
 
 export const prerender = true;
 export async function getStaticPaths() {
-    const projectEntries = await getCollection("projects");
-    return projectEntries.map((entry) => ({
+    const bookEntries = await getCollection("books");
+    return bookEntries.map((entry) => ({
         params: { slug: entry.slug },
         props: { entry },
     }));
