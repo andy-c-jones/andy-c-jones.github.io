@@ -1,5 +1,5 @@
 ---
-title: "Test-Driven Development"
+title: "Test-Driven Development (TDD)"
 date: '2023-06-29'
 author: "Andrew 'AJ' Jones"
 
@@ -7,12 +7,9 @@ tags: ['Extreme Programming', 'XP', 'Software Development']
 categories: ['Extreme Programming']
 
 image:
-    url: '/blog-post.webp'
-    alt: 'Post Thumbnail'
+    url: '/images/_01c30da4-2642-40df-82aa-1f2f2930166e.jpg'
+    alt: 'a cute raccoon using a laptop'
 ---
-
-
-# Test-Driven Development (TDD)
 
 [Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html) describes TDD as the following:
  - Write a test for the next bit of functionality you want to add.

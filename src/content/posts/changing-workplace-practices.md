@@ -7,11 +7,11 @@ tags: ['Change', 'Agile Transformation']
 categories: ['Agile Transformation']
 
 image:
-    url: '/blog-post.webp'
-    alt: 'Post Thumbnail'
+    url: '/images/_713616d5-635d-468d-86eb-13a620318669.jpg'
+    alt: 'a cute raccoon in an office'
 ---
 
-# A reflection on changing workplace practices
+This a reflection on changing practices within a long established workplace.
 
 I initially wrote this as part of my [pair programming article](/posts/pair-programming/) but split it into a second post since I realised this is applicable for any workplace change. Some people thrive in a changing environment, others don't, and a further group have more important things going on in their lives to spend energy on than your companies "Agile Transformation".
 
