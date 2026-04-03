@@ -315,6 +315,37 @@ html[data-theme="dark"] .contrib-level-4 {
     border-radius: 0.4rem;
 }
 
+.skills__icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0.22rem;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--surface);
+}
+
+.skills__icon-svg {
+    width: 24px;
+    height: 24px;
+}
+
+html[data-theme="dark"] .skills__icon-svg {
+    filter: invert(1) brightness(1.15);
+}
+
+.skills__icon-copilot {
+    width: 24px;
+    height: 24px;
+    fill: #24292f;
+}
+
+html[data-theme="dark"] .skills__icon-copilot {
+    fill: #f0f6fc;
+}
+
 .homepage-posts {
     display: none;
 }
