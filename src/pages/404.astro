@@ -1,17 +1,14 @@
 ---
-const description = "404";
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+const pageTitle = "404";
 ---
-<layout>
-    <div class="lost">
-        <div class="gif">
-            <img width="300" height="259" alt="Raccoon404Gif" src="/404.webp"/>
-        </div>
-        <h1 class="lost__header">{ description }</h1>
-        <p class="lost__body">It seems like you've wandered into the wrong forest!</p>
+<Layout pageTitle={pageTitle}>
+    <article class="prose">
+        <p class="profile__eyebrow">Not found</p>
+        <h1>{pageTitle}</h1>
+        <p>It seems like you&rsquo;ve wandered into the wrong forest.</p>
         <p>
-            <a class="lost__link" href="/">Return Home</a>
+            <a href="/">Return home</a>
         </p>
-    </div>
-</layout>
-
+    </article>
+</Layout>

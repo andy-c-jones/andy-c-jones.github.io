@@ -1,30 +1,88 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import RecentPosts from "../components/RecentPosts.astro";
+import GitHubContributions from "../components/GitHubContributions.astro";
+import { getGitHubProfile } from "../utils/githubProfile";
+import { getEntrySlug } from "../utils/content";
+
+const allPosts = await getCollection("posts");
+const recentPosts = allPosts
+    .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
+    .slice(0, 6)
+    .map((post) => ({
+        slug: getEntrySlug(post),
+        title: post.data.title,
+        date: post.data.date
+    }));
+const githubProfile = await getGitHubProfile("andy-c-jones");
 const pageTitle = "Dark Peak Development";
 ---
 <Layout pageTitle={pageTitle}>
-    <div class="gif">
-        <img width="300" height="259" alt="RaccoonSpaceGif" src="/space.webp"/>
-    </div>
-    <h1>Andrew 'AJ' Jones</h1>
-    <span class="badge">Software Engineer</span> <span class="badge">Architect</span> <span class="badge">Extreme Programming Advocate</span>
-    <h2>About</h2>
-    <p>
-        A technical advisory consultant, architect and Extreme Programming (XP) advocate. 
-        I have built and operated SaaS platforms in telecommunications, public security, logistics, insurance, loans, e-commerce, government and the arts. 
-        I also teach and coach developers to improve their understanding of modern agile methodologies, continuous delivery, infrastructure-as-code and cloud technologies.
-    </p>
-    <h2>Skills</h2>
-    <div class="skills center">
-        <img class="skills__img" width="46" height="46" alt="Clojure" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/clojure/clojure-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="Kotlin" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="MSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"/>
-    </div>
+    <section class="profile-layout">
+        <article class="profile">
+            <p class="profile__eyebrow">Profile</p>
+            <img
+                class="profile__avatar"
+                src={githubProfile.avatarUrl}
+                alt={`Portrait of ${githubProfile.name}`}
+                width="192"
+                height="192"
+                loading="lazy"
+            />
+            <h1>{githubProfile.name}</h1>
+            <p class="profile__summary">
+                {githubProfile.bio}
+            </p>
+            <GitHubContributions username="andy-c-jones" />
+            <ul class="pill-list" aria-label="GitHub profile details">
+                <li>{githubProfile.publicRepos} public repos</li>
+                <li>{githubProfile.followers} followers</li>
+                <li>{githubProfile.following} following</li>
+                {
+                    githubProfile.location && (
+                        <li class="pill-list__meta">
+                            <svg class="pill-list__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 1.5a7.5 7.5 0 0 0-7.5 7.5c0 5.56 6.49 12.83 6.77 13.13a1 1 0 0 0 1.46 0c.28-.3 6.77-7.57 6.77-13.13A7.5 7.5 0 0 0 12 1.5Zm0 10.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                            </svg>
+                            <span>{githubProfile.location}</span>
+                        </li>
+                    )
+                }
+                {
+                    githubProfile.company && (
+                        <li class="pill-list__meta">
+                            <svg class="pill-list__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5.25A2.25 2.25 0 0 1 11.25 3h1.5A2.25 2.25 0 0 1 15 5.25V6h3.75A2.25 2.25 0 0 1 21 8.25v9A2.25 2.25 0 0 1 18.75 19.5H5.25A2.25 2.25 0 0 1 3 17.25v-9A2.25 2.25 0 0 1 5.25 6H9v-.75Zm1.5.75h3v-.75a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75V6Z" />
+                            </svg>
+                            <span>{githubProfile.company}</span>
+                        </li>
+                    )
+                }
+            </ul>
+            <p class="profile__summary">
+                A technical advisory consultant, architect and Extreme Programming (XP) advocate.
+                I have built and operated SaaS platforms in telecommunications, public security, logistics, insurance, loans, e-commerce, government and the arts.
+                I also teach and coach developers to improve their understanding of modern agile methodologies, continuous delivery, infrastructure-as-code and cloud technologies.
+            </p>
+            <ul class="pill-list" aria-label="Roles">
+                <li>Software Engineer</li>
+                <li>Architect</li>
+                <li>Extreme Programming Advocate</li>
+            </ul>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <img class="skills__img" width="42" height="42" alt="Clojure" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/clojure/clojure-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="Kotlin" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="SQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" loading="lazy" />
+            </div>
+        </article>
+        <RecentPosts posts={recentPosts} />
+    </section>
 </Layout>
-

@@ -1,45 +1,47 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-const { pageTitle } = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+    pageTitle: string;
+}
+
+const { pageTitle } = Astro.props as Props;
 ---
 <!DOCTYPE html>
-<html transition:animate="none" lang="en">
-	<head>
+<html lang="en">
+    <head>
         <meta charset="utf-8" />
-        <meta name="description" content="Astro description">
-        <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="Personal site for Andrew 'AJ' Jones: profile, writing, and posts on software engineering."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap" as="style">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap" rel="stylesheet">       
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
-	</head>
-	<body>
-        <Header />
-        <main>
-	    <slot />
-            <Footer />
-        </main>
-        <script>
-            function colorMode() {
-                if (
-                    localStorage.theme === "light" ||
-                    (!("theme" in localStorage) &&
-                    window.matchMedia("(prefers-color-scheme: light)").matches)
-                ) {
-                    document.documentElement.classList.add("light");
-                } else {
-                    document.documentElement.classList.remove("light");
-                }
-              }
-            
-            colorMode();
-            document.addEventListener('astro:after-swap', colorMode);
+        <script is:inline>
+            const storedTheme = localStorage.getItem("theme");
+            const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+            document.documentElement.dataset.theme = storedTheme ?? preferredTheme;
         </script>
-	</body>
+    </head>
+    <body>
+        <div class="site-shell">
+            <Header />
+            <main class="site-main">
+                <slot />
+            </main>
+            <Footer />
+        </div>
+    </body>
 </html>
-

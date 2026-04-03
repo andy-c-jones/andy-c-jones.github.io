@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import { getEntrySlug } from "../utils/content";
+
+interface RecentPostItem {
+    slug: string;
+    title: string;
+    date: string;
+}
+
+interface Props {
+    posts?: RecentPostItem[];
+    currentSlug?: string;
+    maxItems?: number;
+}
+
+const { posts = [], currentSlug, maxItems = 6 } = Astro.props as Props;
+const resolvedPosts =
+    posts.length > 0
+        ? posts
+        : (await getCollection("posts"))
+              .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
+              .map((post) => ({
+                  slug: getEntrySlug(post),
+                  title: post.data.title,
+                  date: post.data.date
+              }));
+const visiblePosts = resolvedPosts.filter((post) => post.slug !== currentSlug).slice(0, maxItems);
+---
+
+<aside class="homepage-posts">
+    <div class="homepage-posts__header">
+        <h2>Recent posts</h2>
+        <a href="/posts/">All posts</a>
+    </div>
+    <ul class="posts-compact" role="list">
+        {
+            visiblePosts.map((post) => (
+                <li>
+                    <a href={`/posts/${post.slug}/`}>
+                        <span>{post.title}</span>
+                        <time datetime={post.date}>
+                            {new Date(post.date).toLocaleDateString("en-GB", {
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric"
+                            })}
+                        </time>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</aside>

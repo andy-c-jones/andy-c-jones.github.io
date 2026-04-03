@@ -1,26 +1,16 @@
 ---
 interface Props {
     url: string;
-    image: string;
     title: string;
     date: string;
 }
 
-const { url, image, title, date } = Astro.props;
+const { url, title, date } = Astro.props;
 ---
 
-<li class="card">
-    <a class="card__link" href={url}>
-        <div class="center">
-            <img
-                class="card__img"
-                width="226"
-                src={image}
-                alt="PostImage"
-            />
-        </div>
-        <h3 class="card__title">
-            {title}
-        </h3>
+<li class="post-list__item">
+    <a class="post-list__link" href={url}>
+        <h2>{title}</h2>
+        <time datetime={date}>{new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}</time>
     </a>
 </li>
