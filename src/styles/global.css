@@ -330,10 +330,13 @@ html[data-theme="dark"] .contrib-level-4 {
 .skills__icon-svg {
     width: 24px;
     height: 24px;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(13%) saturate(543%)
+        hue-rotate(180deg) brightness(93%) contrast(90%);
 }
 
 html[data-theme="dark"] .skills__icon-svg {
-    filter: invert(1) brightness(1.15);
+    filter: brightness(0) saturate(100%) invert(97%) sepia(7%) saturate(211%)
+        hue-rotate(176deg) brightness(102%) contrast(94%);
 }
 
 .skills__icon-copilot {
