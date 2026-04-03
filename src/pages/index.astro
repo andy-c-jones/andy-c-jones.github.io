@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
+import GitHubContributions from "../components/GitHubContributions.astro";
 import { getGitHubProfile } from "../utils/githubProfile";
 import { getEntrySlug } from "../utils/content";
 
@@ -33,6 +34,7 @@ const pageTitle = "Dark Peak Development";
             <p class="profile__summary">
                 {githubProfile.bio}
             </p>
+            <GitHubContributions username="andy-c-jones" />
             <ul class="pill-list" aria-label="GitHub profile details">
                 <li>{githubProfile.publicRepos} public repos</li>
                 <li>{githubProfile.followers} followers</li>
