@@ -183,6 +183,18 @@ p {
     background: var(--surface);
 }
 
+.pill-list__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.pill-list__icon {
+    width: 0.85rem;
+    height: 0.85rem;
+    fill: currentColor;
+}
+
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
