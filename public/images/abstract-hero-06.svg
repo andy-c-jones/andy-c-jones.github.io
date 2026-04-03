@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 06</title>
+  <desc id="desc">Minimalist abstract fields with arcs and subtle texture.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.18" cy="0.25" r="0.5">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.82" cy="0.75" r="0.45">
+      <stop offset="0%" stop-color="#a5f3fc" stop-opacity="0.44"/>
+      <stop offset="100%" stop-color="#a5f3fc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <rect width="1600" height="700" fill="url(#glowA)"/>
+  <rect width="1600" height="700" fill="url(#glowB)"/>
+  <path d="M-100 640C156 483 366 451 610 508C834 561 1009 687 1295 681C1424 678 1524 643 1700 560V700H-100Z" fill="#020617" fill-opacity="0.33"/>
+  <path d="M100 312C240 204 415 151 602 174C792 197 939 292 1117 286C1259 281 1391 214 1540 130" fill="none" stroke="#e0f2fe" stroke-opacity="0.34" stroke-width="46" stroke-linecap="round"/>
+  <path d="M40 404C207 315 379 292 567 330C734 364 873 452 1043 459C1230 467 1369 403 1537 297" fill="none" stroke="#67e8f9" stroke-opacity="0.26" stroke-width="34" stroke-linecap="round"/>
+</svg>

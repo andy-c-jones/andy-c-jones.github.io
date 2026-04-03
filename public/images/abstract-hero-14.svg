@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 14</title>
+  <desc id="desc">Cool abstract layers with teal mist and dark depth.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="45%" stop-color="#155e75"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <path d="M0 280C186 208 362 200 563 256C775 313 940 436 1171 430C1357 425 1488 346 1600 292V700H0Z" fill="#cffafe" fill-opacity="0.2"/>
+  <path d="M0 430C160 386 321 373 511 404C727 439 902 555 1128 556C1315 557 1459 496 1600 430V700H0Z" fill="#ecfeff" fill-opacity="0.13"/>
+  <path d="M0 560C190 499 372 489 588 531C804 572 957 679 1188 670C1357 664 1478 614 1600 567V700H0Z" fill="#020617" fill-opacity="0.31"/>
+  <circle cx="1270" cy="140" r="150" fill="#ecfeff" fill-opacity="0.14"/>
+</svg>

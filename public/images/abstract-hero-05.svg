@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 05</title>
+  <desc id="desc">Abstract brush-like bands in coral and ultramarine tones.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="bandA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#fbcfe8" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="bandB" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fecdd3" stop-opacity="0.46"/>
+      <stop offset="100%" stop-color="#fca5a5" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <path d="M-40 268C147 186 293 182 473 220C684 264 839 383 1044 374C1269 364 1391 244 1650 210V350C1438 397 1319 516 1080 522C860 528 683 405 460 377C282 355 142 372-40 438Z" fill="url(#bandA)"/>
+  <path d="M-30 455C135 410 299 394 486 427C705 466 873 589 1095 591C1299 593 1452 492 1630 427V560C1458 628 1325 689 1100 688C860 687 683 564 468 528C280 496 112 516-30 560Z" fill="url(#bandB)"/>
+  <circle cx="220" cy="145" r="115" fill="#dbeafe" fill-opacity="0.18"/>
+  <circle cx="1360" cy="560" r="170" fill="#fdf2f8" fill-opacity="0.15"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 15</title>
+  <desc id="desc">Rich abstract palette with emerald and plum transitions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="45%" stop-color="#3b0764"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <path d="M0 252C188 178 355 187 548 241C783 306 952 449 1194 438C1375 430 1498 350 1600 300V700H0Z" fill="#dcfce7" fill-opacity="0.18"/>
+  <path d="M0 400C157 350 324 338 518 373C747 413 918 545 1147 548C1345 551 1475 487 1600 424V700H0Z" fill="#fae8ff" fill-opacity="0.12"/>
+  <path d="M30 508C205 447 395 431 600 466C806 499 971 594 1175 586C1331 580 1472 521 1588 458" fill="none" stroke="#f5d0fe" stroke-opacity="0.22" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="1320" cy="122" r="130" fill="#f0fdf4" fill-opacity="0.13"/>
+</svg>

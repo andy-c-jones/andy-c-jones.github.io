@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 12</title>
+  <desc id="desc">Minimal abstract arcs with cyan glows.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1f"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <circle cx="300" cy="160" r="250" fill="#bae6fd" fill-opacity="0.2"/>
+  <circle cx="1300" cy="580" r="240" fill="#a5f3fc" fill-opacity="0.16"/>
+  <path d="M-100 640C150 482 364 452 610 508C834 561 1014 687 1296 682C1426 680 1530 646 1700 562V700H-100Z" fill="#020617" fill-opacity="0.33"/>
+  <path d="M94 306C240 204 416 153 604 174C792 195 942 293 1118 287C1262 282 1392 218 1542 132" fill="none" stroke="#e0f2fe" stroke-opacity="0.3" stroke-width="44" stroke-linecap="round"/>
+  <path d="M44 404C207 314 380 291 567 331C737 367 876 452 1045 459C1233 467 1368 404 1538 298" fill="none" stroke="#67e8f9" stroke-opacity="0.22" stroke-width="32" stroke-linecap="round"/>
+</svg>

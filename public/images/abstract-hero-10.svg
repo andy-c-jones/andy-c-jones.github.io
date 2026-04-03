@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 10</title>
+  <desc id="desc">Muted abstract layers in moss and stone tones.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="55%" stop-color="#4b5563"/>
+      <stop offset="100%" stop-color="#65a30d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <path d="M0 265C175 198 362 188 567 244C782 303 938 424 1163 420C1360 417 1484 340 1600 286V700H0Z" fill="#ecfccb" fill-opacity="0.2"/>
+  <path d="M0 406C154 362 303 346 486 371C690 400 855 536 1091 539C1293 542 1437 470 1600 391V700H0Z" fill="#f9fafb" fill-opacity="0.14"/>
+  <path d="M0 525C184 478 358 465 566 510C788 559 935 674 1182 669C1338 665 1464 621 1600 568V700H0Z" fill="#020617" fill-opacity="0.3"/>
+  <circle cx="1360" cy="130" r="144" fill="#fefce8" fill-opacity="0.16"/>
+</svg>

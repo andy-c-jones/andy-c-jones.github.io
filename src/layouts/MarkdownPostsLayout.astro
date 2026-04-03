@@ -8,6 +8,15 @@ const { currentSlug = "" } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
     <section class="profile-layout">
         <article class="prose">
+            <figure class="post-hero">
+                <img
+                    class="post-hero__image"
+                    src={frontmatter.image.url}
+                    alt={frontmatter.image.alt}
+                    loading="eager"
+                    decoding="async"
+                />
+            </figure>
             <p class="profile__eyebrow">Post</p>
             <h1>{frontmatter.title}</h1>
             <p class="post-meta">

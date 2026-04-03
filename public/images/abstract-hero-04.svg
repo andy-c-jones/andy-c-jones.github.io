@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 04</title>
+  <desc id="desc">Muted abstract topographic waves with soft gradients.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="55%" stop-color="#4b5563"/>
+      <stop offset="100%" stop-color="#84cc16"/>
+    </linearGradient>
+    <linearGradient id="waveA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d9f99d" stop-opacity="0.36"/>
+      <stop offset="100%" stop-color="#ecfccb" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="waveB" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fefce8" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#e5e7eb" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <path d="M0 270C162 198 367 190 578 249C783 307 951 427 1186 424C1365 421 1481 347 1600 286V700H0Z" fill="url(#waveA)"/>
+  <path d="M0 410C149 364 285 344 460 369C659 399 822 537 1069 540C1279 542 1429 462 1600 387V700H0Z" fill="url(#waveB)"/>
+  <path d="M0 525C194 471 357 463 561 510C786 563 930 676 1171 670C1333 666 1461 614 1600 566V700H0Z" fill="#111827" fill-opacity="0.3"/>
+  <circle cx="1360" cy="130" r="145" fill="#fefce8" fill-opacity="0.18"/>
+</svg>

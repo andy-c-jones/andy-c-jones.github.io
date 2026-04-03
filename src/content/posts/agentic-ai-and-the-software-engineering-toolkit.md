@@ -7,8 +7,8 @@ tags: ['AI', 'Agentic AI', 'Extreme Programming', 'Software Engineering']
 categories: ['AI Engineering']
 
 image:
-    url: '/images/OIG1.zQhAvqFgE7PXoGLFg6Os.jpeg'
-    alt: 'two cute raccoons pair programming'
+    url: '/images/abstract-hero-01.svg'
+    alt: 'abstract flowing shapes in teal, violet and dusk blue'
 
 ---
 

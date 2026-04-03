@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 01</title>
+  <desc id="desc">Layered abstract gradients with curved organic forms.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="0.25" cy="0.2" r="0.75">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#67e8f9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0.7" cy="0.7" r="0.8">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <rect width="1600" height="700" fill="url(#orbA)"/>
+  <rect width="1600" height="700" fill="url(#orbB)"/>
+  <path d="M0 520C140 430 270 390 430 420C620 455 760 615 980 592C1170 572 1305 443 1600 466V700H0Z" fill="#020617" fill-opacity="0.35"/>
+  <path d="M0 330C182 272 303 282 454 341C614 403 730 519 930 515C1140 510 1260 361 1600 320V700H0Z" fill="#22d3ee" fill-opacity="0.22"/>
+  <circle cx="1320" cy="140" r="170" fill="#e0f2fe" fill-opacity="0.18"/>
+</svg>

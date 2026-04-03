@@ -439,6 +439,20 @@ html[data-theme="dark"] .skills__icon-copilot {
     color: var(--text-secondary);
 }
 
+.post-hero {
+    margin: 0 0 1.25rem;
+}
+
+.post-hero__image {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    object-fit: cover;
+    aspect-ratio: 14 / 3;
+    background: var(--surface);
+}
+
 .prose :where(p, ul, ol, blockquote, pre) {
     color: var(--text-primary);
     margin-top: 1rem;

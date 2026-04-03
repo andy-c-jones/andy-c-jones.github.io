@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 09</title>
+  <desc id="desc">Concentric abstract circles with neon highlights.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <circle cx="490" cy="420" r="260" fill="none" stroke="#f5d0fe" stroke-opacity="0.25" stroke-width="58"/>
+  <circle cx="490" cy="420" r="138" fill="none" stroke="#f0abfc" stroke-opacity="0.35" stroke-width="42"/>
+  <circle cx="1140" cy="250" r="220" fill="none" stroke="#bfdbfe" stroke-opacity="0.24" stroke-width="52"/>
+  <circle cx="1140" cy="250" r="114" fill="none" stroke="#7dd3fc" stroke-opacity="0.36" stroke-width="36"/>
+  <path d="M0 585C250 505 440 518 635 555C840 594 976 675 1190 665C1330 659 1440 622 1600 555V700H0Z" fill="#030712" fill-opacity="0.34"/>
+</svg>

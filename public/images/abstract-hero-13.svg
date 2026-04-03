@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract Hero 13</title>
+  <desc id="desc">Warm abstract gradients with flowing lines.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="40%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <path d="M0 250C210 175 360 189 552 243C775 305 942 443 1188 437C1363 432 1495 355 1600 301V700H0Z" fill="#fef3c7" fill-opacity="0.23"/>
+  <path d="M0 396C172 346 346 337 543 375C776 420 947 549 1172 548C1364 547 1488 477 1600 420V700H0Z" fill="#fff7ed" fill-opacity="0.14"/>
+  <path d="M40 505C210 438 407 425 609 455C805 484 976 577 1176 569C1321 563 1460 501 1580 432" fill="none" stroke="#fff7ed" stroke-opacity="0.22" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="1318" cy="130" r="128" fill="#fffbeb" fill-opacity="0.17"/>
+</svg>

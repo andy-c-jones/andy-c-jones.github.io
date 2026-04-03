@@ -8,8 +8,8 @@ tags: ['Extreme Programming', 'XP', 'Software Development']
 categories: ['Extreme Programming']
 
 image:
-    url: '/images/OIG1.zQhAvqFgE7PXoGLFg6Os.jpeg'
-    alt: 'two cute raccoons pair programming'
+    url: '/images/abstract-hero-03.svg'
+    alt: 'circular abstract composition in magenta, cobalt and peach'
 
 ---
 

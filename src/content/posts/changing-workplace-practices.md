@@ -7,8 +7,8 @@ tags: ['Change', 'Agile Transformation']
 categories: ['Agile Transformation']
 
 image:
-    url: '/images/_713616d5-635d-468d-86eb-13a620318669.jpg'
-    alt: 'a cute raccoon in an office'
+    url: '/images/abstract-hero-04.svg'
+    alt: 'soft abstract waves with olive, charcoal and cream tones'
 
 ---
 

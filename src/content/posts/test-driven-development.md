@@ -7,8 +7,8 @@ tags: ['Extreme Programming', 'XP', 'Software Development']
 categories: ['Extreme Programming']
 
 image:
-    url: '/images/_01c30da4-2642-40df-82aa-1f2f2930166e.jpg'
-    alt: 'a cute raccoon using a laptop'
+    url: '/images/abstract-hero-02.svg'
+    alt: 'layered geometric gradients in amber, rust and indigo'
 
 ---
 
