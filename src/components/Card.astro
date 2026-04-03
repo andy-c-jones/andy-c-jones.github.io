@@ -1,28 +1,16 @@
 ---
 interface Props {
     url: string;
-    image: string;
     title: string;
     body: string;
 }
 
-const { url, image, title, body } = Astro.props;
+const { url, title, body } = Astro.props;
 ---
 
-<li class="card">
-    <a class="card__link" href={url}>
-        <div class="center">
-            <img
-                class="card__img"
-                src={image}
-                alt="ProjectImage"
-            />
-        </div>
-        <h3 class="card__title">
-            {title}
-        </h3>
-        <p class="card__txt">
-            {body}
-        </p>
+<li class="post-list__item">
+    <a class="post-list__link" href={url}>
+        <h2>{title}</h2>
+        <span>{body}</span>
     </a>
 </li>

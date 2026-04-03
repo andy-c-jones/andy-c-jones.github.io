@@ -1,14 +1,11 @@
 ---
-import ThemeIcon from './ThemeIcon.astro';
+import ThemeIcon from "./ThemeIcon.astro";
 ---
-<div class="navbar">
-    <div class="navbar__title">
-        <a href="/">Dark Peak Development</a>
-    </div>
-    <div class="navbar__menu">
+<div class="nav">
+    <a class="nav__brand" href="/">Dark Peak Development</a>
+    <div class="nav__links">
         <a href="/posts/">Posts</a>
-        <a href="https://github.com/andy-c-jones" target="_blank">GitHub</a>
+        <a href="https://github.com/andy-c-jones" target="_blank" rel="noreferrer">GitHub</a>
         <ThemeIcon />
     </div>
 </div>
-

@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEntrySlug } from "../utils/content";
+
+interface Props {
+    posts: CollectionEntry<"posts">[];
+    currentSlug?: string;
+    maxItems?: number;
+}
+
+const { posts, currentSlug, maxItems = 6 } = Astro.props as Props;
+const visiblePosts = posts.filter((post) => getEntrySlug(post) !== currentSlug).slice(0, maxItems);
+---
+
+<aside class="homepage-posts">
+    <div class="homepage-posts__header">
+        <h2>Recent posts</h2>
+        <a href="/posts/">All posts</a>
+    </div>
+    <ul class="posts-compact" role="list">
+        {
+            visiblePosts.map((post) => (
+                <li>
+                    <a href={`/posts/${getEntrySlug(post)}/`}>
+                        <span>{post.data.title}</span>
+                        <time datetime={post.data.date}>
+                            {new Date(post.data.date).toLocaleDateString("en-GB", {
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric"
+                            })}
+                        </time>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</aside>

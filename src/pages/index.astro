@@ -1,30 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import RecentPosts from "../components/RecentPosts.astro";
+
+const allPosts = await getCollection("posts");
+const recentPosts = allPosts.sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date)).slice(0, 6);
 const pageTitle = "Dark Peak Development";
 ---
 <Layout pageTitle={pageTitle}>
-    <div class="gif">
-        <img width="300" height="259" alt="RaccoonSpaceGif" src="/space.webp"/>
-    </div>
-    <h1>Andrew 'AJ' Jones</h1>
-    <span class="badge">Software Engineer</span> <span class="badge">Architect</span> <span class="badge">Extreme Programming Advocate</span>
-    <h2>About</h2>
-    <p>
-        A technical advisory consultant, architect and Extreme Programming (XP) advocate. 
-        I have built and operated SaaS platforms in telecommunications, public security, logistics, insurance, loans, e-commerce, government and the arts. 
-        I also teach and coach developers to improve their understanding of modern agile methodologies, continuous delivery, infrastructure-as-code and cloud technologies.
-    </p>
-    <h2>Skills</h2>
-    <div class="skills center">
-        <img class="skills__img" width="46" height="46" alt="Clojure" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/clojure/clojure-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="Kotlin" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="MSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"/>
-        <img class="skills__img" width="46" height="46" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"/>
-    </div>
+    <section class="profile-layout">
+        <article class="profile">
+            <p class="profile__eyebrow">Profile</p>
+            <h1>Andrew &ldquo;AJ&rdquo; Jones</h1>
+            <p class="profile__summary">
+                A technical advisory consultant, architect and Extreme Programming (XP) advocate.
+                I have built and operated SaaS platforms in telecommunications, public security, logistics, insurance, loans, e-commerce, government and the arts.
+                I also teach and coach developers to improve their understanding of modern agile methodologies, continuous delivery, infrastructure-as-code and cloud technologies.
+            </p>
+            <ul class="pill-list" aria-label="Roles">
+                <li>Software Engineer</li>
+                <li>Architect</li>
+                <li>Extreme Programming Advocate</li>
+            </ul>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <img class="skills__img" width="42" height="42" alt="Clojure" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/clojure/clojure-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="Kotlin" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="SQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="Terraform" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" loading="lazy" />
+                <img class="skills__img" width="42" height="42" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" loading="lazy" />
+            </div>
+        </article>
+        <RecentPosts posts={recentPosts} />
+    </section>
 </Layout>
-

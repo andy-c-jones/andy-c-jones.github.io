@@ -1,14 +1,16 @@
 ---
-import BaseLayout from './Layout.astro';
+import BaseLayout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-    <h2>{frontmatter.title}</h2>
-    <slot />
-    <ul class="badge__list">
-        <li><span class="badge badge--item">WEBSITE</span><a class="badge__link" href={frontmatter.website} target="_blank">{frontmatter.website}</a></li>
-    </ul>
-    <div class="center">
-    </div>
+    <article class="prose">
+        <p class="profile__eyebrow">Recommendation</p>
+        <h1>{frontmatter.title}</h1>
+        <slot />
+        <p class="post-meta">
+            <span>Website</span>
+            <span aria-hidden="true">&middot;</span>
+            <a href={frontmatter.website} target="_blank" rel="noreferrer">{frontmatter.website}</a>
+        </p>
+    </article>
 </BaseLayout>
-

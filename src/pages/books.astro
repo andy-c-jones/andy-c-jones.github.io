@@ -1,19 +1,23 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getEntrySlug } from "../utils/content";
 const books = await getCollection("books");
-const pageTitle = "Book Reccomendations";
+const pageTitle = "Book Recommendations";
 ---
 <Layout pageTitle={pageTitle}>
-    <h2>Book Reccomendations</h2>
-    <ul role="list" class="link-card-grid">
-        {books.map((card) => <Card 
-            url={`/books/${card.slug}/`} 
-            image={card.data.image.url} 
-            title={card.data.title} 
-            body={card.data.description}
-        />)}
+    <section>
+        <p class="profile__eyebrow">Reading</p>
+        <h1>Book recommendations</h1>
+        <ul role="list" class="post-list">
+            {books.map((card) => (
+                <Card
+                    url={`/books/${getEntrySlug(card)}/`}
+                    title={card.data.title}
+                    body={card.data.description}
+                />
+            ))}
     </ul>
+    </section>
 </Layout>
-
