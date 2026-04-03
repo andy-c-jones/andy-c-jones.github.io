@@ -2,7 +2,7 @@
 import BaseLayout from "./Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
 const { frontmatter } = Astro.props;
-const { recentPosts = [], currentSlug = "" } = Astro.props;
+const { currentSlug = "" } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
@@ -23,6 +23,6 @@ const { recentPosts = [], currentSlug = "" } = Astro.props;
             </p>
             <slot />
         </article>
-        <RecentPosts posts={recentPosts} currentSlug={currentSlug} />
+        <RecentPosts currentSlug={currentSlug} />
     </section>
 </BaseLayout>

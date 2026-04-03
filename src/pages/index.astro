@@ -2,16 +2,44 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
+import { getGitHubProfile } from "../utils/githubProfile";
+import { getEntrySlug } from "../utils/content";
 
 const allPosts = await getCollection("posts");
-const recentPosts = allPosts.sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date)).slice(0, 6);
+const recentPosts = allPosts
+    .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
+    .slice(0, 6)
+    .map((post) => ({
+        slug: getEntrySlug(post),
+        title: post.data.title,
+        date: post.data.date
+    }));
+const githubProfile = await getGitHubProfile("andy-c-jones");
 const pageTitle = "Dark Peak Development";
 ---
 <Layout pageTitle={pageTitle}>
     <section class="profile-layout">
         <article class="profile">
             <p class="profile__eyebrow">Profile</p>
-            <h1>Andrew &ldquo;AJ&rdquo; Jones</h1>
+            <img
+                class="profile__avatar"
+                src={githubProfile.avatarUrl}
+                alt={`Portrait of ${githubProfile.name}`}
+                width="192"
+                height="192"
+                loading="lazy"
+            />
+            <h1>{githubProfile.name}</h1>
+            <p class="profile__summary">
+                {githubProfile.bio}
+            </p>
+            <ul class="pill-list" aria-label="GitHub profile details">
+                <li>{githubProfile.publicRepos} public repos</li>
+                <li>{githubProfile.followers} followers</li>
+                <li>{githubProfile.following} following</li>
+                {githubProfile.location && <li>{githubProfile.location}</li>}
+                {githubProfile.company && <li>{githubProfile.company}</li>}
+            </ul>
             <p class="profile__summary">
                 A technical advisory consultant, architect and Extreme Programming (XP) advocate.
                 I have built and operated SaaS platforms in telecommunications, public security, logistics, insurance, loans, e-commerce, government and the arts.

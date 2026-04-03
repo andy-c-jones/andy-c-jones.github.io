@@ -1,15 +1,31 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import { getEntrySlug } from "../utils/content";
 
+interface RecentPostItem {
+    slug: string;
+    title: string;
+    date: string;
+}
+
 interface Props {
-    posts: CollectionEntry<"posts">[];
+    posts?: RecentPostItem[];
     currentSlug?: string;
     maxItems?: number;
 }
 
-const { posts, currentSlug, maxItems = 6 } = Astro.props as Props;
-const visiblePosts = posts.filter((post) => getEntrySlug(post) !== currentSlug).slice(0, maxItems);
+const { posts = [], currentSlug, maxItems = 6 } = Astro.props as Props;
+const resolvedPosts =
+    posts.length > 0
+        ? posts
+        : (await getCollection("posts"))
+              .sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date))
+              .map((post) => ({
+                  slug: getEntrySlug(post),
+                  title: post.data.title,
+                  date: post.data.date
+              }));
+const visiblePosts = resolvedPosts.filter((post) => post.slug !== currentSlug).slice(0, maxItems);
 ---
 
 <aside class="homepage-posts">
@@ -21,10 +37,10 @@ const visiblePosts = posts.filter((post) => getEntrySlug(post) !== currentSlug).
         {
             visiblePosts.map((post) => (
                 <li>
-                    <a href={`/posts/${getEntrySlug(post)}/`}>
-                        <span>{post.data.title}</span>
-                        <time datetime={post.data.date}>
-                            {new Date(post.data.date).toLocaleDateString("en-GB", {
+                    <a href={`/posts/${post.slug}/`}>
+                        <span>{post.title}</span>
+                        <time datetime={post.date}>
+                            {new Date(post.date).toLocaleDateString("en-GB", {
                                 year: "numeric",
                                 month: "short",
                                 day: "numeric"

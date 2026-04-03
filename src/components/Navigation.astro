@@ -2,7 +2,13 @@
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 <div class="nav">
-    <a class="nav__brand" href="/">Dark Peak Development</a>
+    <a class="nav__brand" href="/">
+        <svg class="nav__brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M10 48 26 22l8 12 6-8 14 22H10Z" />
+            <path d="M22.8 26.8 26 22l8 12-3.6 5.4-7.6-12.6Z" />
+        </svg>
+        <span>Dark Peak Development</span>
+    </a>
     <div class="nav__links">
         <a href="/posts/">Posts</a>
         <a href="https://github.com/andy-c-jones" target="_blank" rel="noreferrer">GitHub</a>

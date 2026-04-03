@@ -6,17 +6,16 @@ import { getEntrySlug } from "../../utils/content";
 export const prerender = true;
 export async function getStaticPaths() {
     const postEntries = await getCollection("posts");
-    const sortedPosts = postEntries.sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
     return postEntries.map((entry) => ({
         params: { slug: getEntrySlug(entry) },
-        props: { entry, recentPosts: sortedPosts },
+        props: { entry },
     }));
 }
 
-const { entry, recentPosts } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<MarkdownPostsLayout frontmatter={entry.data} recentPosts={recentPosts} currentSlug={getEntrySlug(entry)}>
+<MarkdownPostsLayout frontmatter={entry.data} currentSlug={getEntrySlug(entry)}>
     <Content />
 </MarkdownPostsLayout>

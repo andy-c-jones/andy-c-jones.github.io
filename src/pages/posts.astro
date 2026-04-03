@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/CardPost.astro";
-import RecentPosts from "../components/RecentPosts.astro";
 import { getEntrySlug } from "../utils/content";
 const allPosts = await getCollection("posts");
 const posts = allPosts.sort((a, b) => +new Date(b.data.date) - +new Date(a.data.date));
@@ -10,22 +9,19 @@ const pageTitle = "Posts";
 ---
 
 <Layout pageTitle={pageTitle}>
-    <section class="profile-layout">
-        <article class="profile">
-            <p class="profile__eyebrow">Writing</p>
-            <h1>Posts</h1>
-            <ul role="list" class="post-list">
-                {
-                    posts.map((cardPost) => (
-                        <Card
-                            url={`/posts/${getEntrySlug(cardPost)}/`}
-                            title={cardPost.data.title}
-                            date={cardPost.data.date}
-                        />
-                    ))
-                }
-            </ul>
-        </article>
-        <RecentPosts posts={posts} />
+    <section>
+        <p class="profile__eyebrow">Writing</p>
+        <h1>Posts</h1>
+        <ul role="list" class="post-list">
+            {
+                posts.map((cardPost) => (
+                    <Card
+                        url={`/posts/${getEntrySlug(cardPost)}/`}
+                        title={cardPost.data.title}
+                        date={cardPost.data.date}
+                    />
+                ))
+            }
+        </ul>
     </section>
 </Layout>

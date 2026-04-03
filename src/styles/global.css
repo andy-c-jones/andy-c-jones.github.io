@@ -78,11 +78,24 @@ a:hover {
 }
 
 .nav__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     font-family: var(--font-serif);
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.01em;
     text-decoration: none;
+}
+
+.nav__brand-icon {
+    width: 2.1rem;
+    height: 2.1rem;
+    fill: var(--accent);
+}
+
+.nav__brand-icon path:last-child {
+    fill: color-mix(in oklab, var(--accent), white 40%);
 }
 
 .nav__links {
@@ -131,6 +144,12 @@ p {
 
 .profile {
     min-width: 0;
+}
+
+.profile__avatar {
+    margin-top: 0.85rem;
+    border-radius: 999px;
+    border: 2px solid var(--border);
 }
 
 .profile__eyebrow {
