@@ -9,6 +9,7 @@ categories: ['Agile Transformation']
 image:
     url: '/images/_713616d5-635d-468d-86eb-13a620318669.jpg'
     alt: 'a cute raccoon in an office'
+
 ---
 
 This a reflection on changing practices within a long established workplace.

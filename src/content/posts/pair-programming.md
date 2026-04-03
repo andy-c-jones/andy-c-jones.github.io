@@ -10,6 +10,7 @@ categories: ['Extreme Programming']
 image:
     url: '/images/OIG1.zQhAvqFgE7PXoGLFg6Os.jpeg'
     alt: 'two cute raccoons pair programming'
+
 ---
 
 For me, pairing is a key practice of Extreme Programming (XP). Pair Programming is a practice where two engineers work together to implement software. When pairing we take up the roles of Driver, the person typing, and Navigator, who is observing so they can focus on the higher-level concerns like the requirements, code design etc. The Driver and Navigator should swap roles regularly.

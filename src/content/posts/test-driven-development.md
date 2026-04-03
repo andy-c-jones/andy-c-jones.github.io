@@ -9,6 +9,7 @@ categories: ['Extreme Programming']
 image:
     url: '/images/_01c30da4-2642-40df-82aa-1f2f2930166e.jpg'
     alt: 'a cute raccoon using a laptop'
+
 ---
 
 [Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html) describes TDD as the following:

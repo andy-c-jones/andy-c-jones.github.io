@@ -6,6 +6,10 @@ author: "Andrew 'AJ' Jones"
 tags: ['AI', 'Agentic AI', 'Extreme Programming', 'Software Engineering']
 categories: ['AI Engineering']
 
+image:
+    url: '/images/OIG1.zQhAvqFgE7PXoGLFg6Os.jpeg'
+    alt: 'two cute raccoons pair programming'
+
 ---
 
 Tools like Claude Code and GitHub Copilot CLI are changing the core tooling of software engineering. They are not just autocomplete tools; they are increasingly capable agents that can navigate codebases, propose designs, generate code, run validation steps, and iterate quickly.
