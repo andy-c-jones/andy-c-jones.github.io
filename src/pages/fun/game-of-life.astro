@@ -1,0 +1,244 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const pageTitle = "Game of Life";
+---
+<Layout pageTitle={pageTitle}>
+    <section>
+        <p class="profile__eyebrow">Playground</p>
+        <h1>Conway's Game of Life</h1>
+        <p>
+            Conway's Game of Life is a cellular automaton devised by mathematician John Conway.
+            The universe is a grid of cells that are either alive or dead, evolving according to simple rules:
+        </p>
+        <ul>
+            <li>Any live cell with 2 or 3 neighbors survives</li>
+            <li>Any dead cell with exactly 3 neighbors becomes alive</li>
+            <li>All other cells die or stay dead</li>
+        </ul>
+        <div class="gol-container">
+            <div class="gol-controls">
+                <button id="btn-play" class="gol-btn">Play</button>
+                <button id="btn-step" class="gol-btn">Step</button>
+                <button id="btn-random" class="gol-btn">Random</button>
+                <button id="btn-clear" class="gol-btn">Clear</button>
+            </div>
+            <canvas id="gol-canvas"></canvas>
+        </div>
+        <div class="gol-stats">
+            <span id="gol-gen">Generation: 0</span>
+            <span id="gol-pop">Population: 0</span>
+        </div>
+        <a class="gol-btn gol-btn--back" href="/fun/">
+            <svg class="gol-btn--back__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+            Back to Fun
+        </a>
+    </section>
+    <style>
+        .gol-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .gol-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .gol-btn {
+            padding: 0.4rem 0.85rem;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: var(--surface);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+        .gol-btn:hover {
+            background: var(--surface-muted);
+            border-color: var(--text-secondary);
+        }
+        .gol-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        .gol-btn--active {
+            background: var(--accent);
+            color: var(--background);
+            border-color: var(--accent);
+        }
+        .gol-btn--active:hover {
+            background: color-mix(in oklab, var(--accent), black 10%);
+            border-color: color-mix(in oklab, var(--accent), black 10%);
+        }
+        .gol-btn--back {
+            opacity: 0.7;
+            margin-top: 2rem;
+        }
+        .gol-btn--back:hover {
+            opacity: 1;
+        }
+        .gol-btn--back__icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.25rem;
+            transform: rotate(-90deg);
+        }
+        #gol-canvas {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            cursor: crosshair;
+        }
+        .gol-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+    </style>
+    <script is:inline>
+        (() => {
+            const COLS = 60;
+            const ROWS = 60;
+            const CELL_SIZE = 9;
+            const GAP = 1;
+            const TICK_MS = 120;
+
+            const canvas = document.getElementById("gol-canvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = COLS * (CELL_SIZE + GAP);
+            canvas.height = ROWS * (CELL_SIZE + GAP);
+
+            let grid = Array.from({ length: ROWS }, () => new Uint8Array(COLS));
+            let running = false;
+            let gen = 0;
+            let tid = null;
+            let dragging = false;
+            let paint = true;
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let pop = 0;
+                for (let r = 0; r < ROWS; r++) {
+                    for (let c = 0; c < COLS; c++) {
+                        if (grid[r][c]) pop++;
+                        ctx.fillStyle = grid[r][c]
+                            ? (document.documentElement.dataset.theme === "dark" ? "#2ea043" : "#2e5f2a")
+                            : "transparent";
+                        ctx.fillRect(
+                            c * (CELL_SIZE + GAP),
+                            r * (CELL_SIZE + GAP),
+                            CELL_SIZE,
+                            CELL_SIZE
+                        );
+                    }
+                }
+                document.getElementById("gol-pop").textContent = "Population: " + pop;
+            }
+
+            function step() {
+                const next = Array.from({ length: ROWS }, () => new Uint8Array(COLS));
+                for (let r = 0; r < ROWS; r++) {
+                    for (let c = 0; c < COLS; c++) {
+                        let n = 0;
+                        for (let dr = -1; dr <= 1; dr++) {
+                            for (let dc = -1; dc <= 1; dc++) {
+                                if (dr === 0 && dc === 0) continue;
+                                const nr = (r + dr + ROWS) % ROWS;
+                                const nc = (c + dc + COLS) % COLS;
+                                n += grid[nr][nc];
+                            }
+                        }
+                        next[r][c] = grid[r][c]
+                            ? (n === 2 || n === 3 ? 1 : 0)
+                            : (n === 3 ? 1 : 0);
+                    }
+                }
+                grid = next;
+                gen++;
+                document.getElementById("gol-gen").textContent = "Generation: " + gen;
+                draw();
+            }
+
+            function loop() {
+                step();
+                if (running) tid = setTimeout(loop, TICK_MS);
+            }
+
+            function getCell(e) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const c = Math.floor(x / (CELL_SIZE + GAP));
+                const r = Math.floor(y / (CELL_SIZE + GAP));
+                if (r >= 0 && r < ROWS && c >= 0 && c < COLS) return [r, c];
+                return null;
+            }
+
+            function paintCell(r, c) {
+                if (paint) grid[r][c] = 1;
+                else grid[r][c] = 0;
+                draw();
+            }
+
+            canvas.addEventListener("mousedown", (e) => {
+                const pos = getCell(e);
+                if (!pos) return;
+                dragging = true;
+                paint = grid[pos[0]][pos[1]] === 0;
+                paintCell(pos[0], pos[1]);
+            });
+            canvas.addEventListener("mousemove", (e) => {
+                if (!dragging) return;
+                const pos = getCell(e);
+                if (!pos) return;
+                paintCell(pos[0], pos[1]);
+            });
+            window.addEventListener("mouseup", () => { dragging = false; });
+
+            function setRunning(on) {
+                running = on;
+                const playBtn = document.getElementById("btn-play");
+                const stepBtn = document.getElementById("btn-step");
+                const randomBtn = document.getElementById("btn-random");
+                if (on) {
+                    playBtn.textContent = "Pause";
+                    playBtn.classList.add("gol-btn--active");
+                    stepBtn.disabled = true;
+                    randomBtn.disabled = true;
+                    loop();
+                } else {
+                    playBtn.textContent = "Play";
+                    playBtn.classList.remove("gol-btn--active");
+                    stepBtn.disabled = false;
+                    randomBtn.disabled = false;
+                    clearTimeout(tid);
+                }
+            }
+
+            document.getElementById("btn-play").addEventListener("click", () => setRunning(!running));
+            document.getElementById("btn-step").addEventListener("click", () => { if (!running) step(); });
+            document.getElementById("btn-random").addEventListener("click", () => {
+                grid = Array.from({ length: ROWS }, () => Array.from({ length: COLS }, () => Math.random() < 0.3 ? 1 : 0));
+                gen = 0;
+                document.getElementById("gol-gen").textContent = "Generation: 0";
+                draw();
+            });
+            document.getElementById("btn-clear").addEventListener("click", () => {
+                if (running) setRunning(false);
+                grid = Array.from({ length: ROWS }, () => new Uint8Array(COLS));
+                gen = 0;
+                document.getElementById("gol-gen").textContent = "Generation: 0";
+                draw();
+            });
+
+            draw();
+        })();
+    </script>
+</Layout>

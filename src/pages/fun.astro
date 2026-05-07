@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+const pageTitle = "Fun Projects";
+---
+<Layout pageTitle={pageTitle}>
+    <section>
+        <p class="profile__eyebrow">Playground</p>
+        <h1>Fun projects</h1>
+        <p>
+            This section of the site is a playground for fun projects. Things here might not
+            necessarily be useful, but I'll learn something from them.
+        </p>
+        <p>
+            Currently I am experimenting with using Copilot CLI with Ollama and Qwen3.6.
+        </p>
+        <ul role="list" class="post-list">
+            <Card
+                url="/fun/game-of-life/"
+                title="Conway's Game of Life"
+                body="A cellular automaton simulation with paint support and wrapped grid."
+            />
+        </ul>
+    </section>
+</Layout>
